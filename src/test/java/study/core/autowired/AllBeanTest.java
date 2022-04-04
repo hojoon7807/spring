@@ -3,6 +3,7 @@ package study.core.autowired;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import study.core.AutoAppConfig;
 import study.core.discount.DiscountPolicy;
@@ -19,6 +20,9 @@ public class AllBeanTest {
     void findAllBean(){
         ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class, DiscountService.class);
         DiscountService discountService = ac.getBean( DiscountService.class);
+        System.out.println(ac.isSingleton("allBeanTest.DiscountService"));
+        Object autoAppConfig = ac.getBean("autoAppConfig");
+        System.out.println("autoAppConfig = " + autoAppConfig);
 
         Member member = new Member(1L, "test", Grade.VIP);
         int discount = discountService.discount(member, 20000, "rateDiscountPolicy");
