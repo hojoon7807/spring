@@ -25,6 +25,4 @@ class FieldLogTraceTest {
         fieldLogTrace.exception(status2, new IllegalStateException());
         fieldLogTrace.exception(status, new IllegalStateException());
     }
-
-
 }
