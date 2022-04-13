@@ -1,15 +1,14 @@
 package study.core.config.nv1_proxy.interface_proxy;
 
 import lombok.RequiredArgsConstructor;
-import study.core.app2.v1.OrderControllerNV1;
-import study.core.app2.v1.OrderServiceNV1;
+import study.core.app2.v1.OrderControllerNV2;
 import study.core.trace.TraceStatus;
 import study.core.trace.logtrace.LogTrace;
 
 @RequiredArgsConstructor
-public class OrderControllerInterfaceProxy implements OrderControllerNV1 {
+public class OrderControllerInterfaceProxy implements OrderControllerNV2 {
 
-    private final OrderControllerNV1 target;
+    private final OrderControllerNV2 target;
     private final LogTrace trace;
 
     @Override

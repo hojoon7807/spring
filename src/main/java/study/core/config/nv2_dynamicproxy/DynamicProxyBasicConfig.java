@@ -21,21 +21,21 @@ public class DynamicProxyBasicConfig {
     }
 
     @Bean
-    public OrderServiceNV1 orderServiceV1(LogTrace trace) {
+    public OrderServiceNV2 orderServiceV1(LogTrace trace) {
         OrderServiceNV1Impl orderService = new OrderServiceNV1Impl(orderRepositoryV1(trace));
 
-        OrderServiceNV1 proxy = (OrderServiceNV1) Proxy.newProxyInstance(OrderServiceNV1.class.getClassLoader(),
-                new Class[]{OrderServiceNV1.class},
+        OrderServiceNV2 proxy = (OrderServiceNV2) Proxy.newProxyInstance(OrderServiceNV2.class.getClassLoader(),
+                new Class[]{OrderServiceNV2.class},
                 new LogTraceBasicHandler(orderService, trace));
         return proxy;
     }
 
     @Bean
-    public OrderControllerNV1 orderControllerV1(LogTrace trace) {
+    public OrderControllerNV2 orderControllerV1(LogTrace trace) {
         OrderControllerNV1Impl orderController = new OrderControllerNV1Impl(orderServiceV1(trace));
 
-        OrderControllerNV1 proxy = (OrderControllerNV1) Proxy.newProxyInstance(OrderControllerNV1.class.getClassLoader(),
-                new Class[]{OrderControllerNV1.class},
+        OrderControllerNV2 proxy = (OrderControllerNV2) Proxy.newProxyInstance(OrderControllerNV2.class.getClassLoader(),
+                new Class[]{OrderControllerNV2.class},
                 new LogTraceBasicHandler(orderController, trace));
         return proxy;
     }

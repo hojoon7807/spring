@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @RequestMapping // 스프링은 @Controller 또는 @RequestMapping이 있어 스프링 컨트롤러로 인식
 @ResponseBody
-public interface OrderControllerNV1 {
+public interface OrderControllerNV2 {
 
     @GetMapping("/nv1/request")
     String request(@RequestParam("itemId") String itemId);

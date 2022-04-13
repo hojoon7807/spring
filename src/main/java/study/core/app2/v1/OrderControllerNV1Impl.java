@@ -1,10 +1,10 @@
 package study.core.app2.v1;
 
-public class OrderControllerNV1Impl implements OrderControllerNV1{
+public class OrderControllerNV1Impl implements OrderControllerNV2 {
 
-    private final OrderServiceNV1 orderService;
+    private final OrderServiceNV2 orderService;
 
-    public OrderControllerNV1Impl(OrderServiceNV1 orderServiceNV1) {
+    public OrderControllerNV1Impl(OrderServiceNV2 orderServiceNV1) {
         this.orderService = orderServiceNV1;
     }
 

@@ -7,7 +7,7 @@ import study.core.app2.v1.*;
 @Configuration
 public class AppNV1Config {
     @Bean
-    public OrderServiceNV1 orderServiceNV1(){
+    public OrderServiceNV2 orderServiceNV1(){
         return new OrderServiceNV1Impl(orderRepositoryNV1());
     }
 
@@ -17,7 +17,7 @@ public class AppNV1Config {
     }
 
     @Bean
-    public OrderControllerNV1 orderControllerNV1(){
+    public OrderControllerNV2 orderControllerNV1(){
         return new OrderControllerNV1Impl(orderServiceNV1());
     }
 

@@ -1,6 +1,6 @@
 package study.core.app2.v1;
 
-public class OrderServiceNV1Impl implements OrderServiceNV1 {
+public class OrderServiceNV1Impl implements OrderServiceNV2 {
 
     private final OrderRepositoryNV1 orderRepository;
 

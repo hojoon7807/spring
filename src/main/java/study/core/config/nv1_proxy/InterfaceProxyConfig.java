@@ -11,7 +11,7 @@ import study.core.trace.logtrace.LogTrace;
 @Configuration
 public class InterfaceProxyConfig {
     @Bean
-    public OrderServiceNV1 orderService(LogTrace trace){
+    public OrderServiceNV2 orderService(LogTrace trace){
         OrderServiceNV1Impl orderServiceImpl = new OrderServiceNV1Impl(orderRepository(trace));
         return new OrderServiceInterfaceProxy(orderServiceImpl, trace);
     }
@@ -23,7 +23,7 @@ public class InterfaceProxyConfig {
     }
 
     @Bean
-    public OrderControllerNV1 orderController(LogTrace trace){
+    public OrderControllerNV2 orderController(LogTrace trace){
         OrderControllerNV1Impl orderControllerImpl = new OrderControllerNV1Impl(orderService(trace));
         return new OrderControllerInterfaceProxy(orderControllerImpl, trace);
     }
